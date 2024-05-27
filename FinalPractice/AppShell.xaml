@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FinalPractice.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FinalPractice"
+    Shell.FlyoutBehavior="Disabled"
+    Title="FinalPractice">
+
+    <TabBar>
+        <Tab Title="MainPage">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+        <Tab Title="RadioPage">
+            <ShellContent ContentTemplate="{DataTemplate local:RadioPage}" Route="RadioPage"/>
+        </Tab>
+        <Tab Title="SizesPage">
+            <ShellContent ContentTemplate="{DataTemplate local:SizesPage}" Route="SizesPage"/>
+        </Tab>
+        <Tab Title="AddressPage">
+            <ShellContent ContentTemplate="{DataTemplate local:AddressPage}" Route="AddressPage"/>
+        </Tab>
+        <Tab Title="CardsPage">
+            <ShellContent ContentTemplate="{DataTemplate local:CardsPage}" Route="CardsPage"/>
+        </Tab>
+        <Tab Title="Checkout">
+            <ShellContent ContentTemplate="{DataTemplate local:CheckoutPage}" Route="CheckoutPage"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

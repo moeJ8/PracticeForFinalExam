@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalPractice.AddressPage"
+             Title="AddressPage">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+            <Label Text="City"/>
+            <Entry x:Name="city"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="District"/>
+            <Entry x:Name="district" />
+        </StackLayout>
+            <Button Text="Add" x:Name="Add_Button" Clicked="Add_Button_Clicked"/>
+
+            <StackLayout HorizontalOptions="Center">
+                <ListView x:Name="Address_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Margin="5" TextColor="black" Text="{Binding Address_ID}"/>
+                                    <Label  Margin="5" TextColor="black" Text="{Binding City}"/>
+                                    <Label  Margin="5" TextColor="black" Text="{Binding District}"/>
+                                    <Button Text="X" BindingContext="{Binding Address_ID}" Clicked="Button_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="10,0" BackgroundColor="#DC3545" CornerRadius="100" WidthRequest="40" HeightRequest="40" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

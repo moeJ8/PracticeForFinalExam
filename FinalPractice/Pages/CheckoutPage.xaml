@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalPractice.CheckoutPage"
+             Title="CheckoutPage">
+    <ScrollView>
+        <StackLayout>
+            <Button Text="Show Lists" x:Name="Show_Lists" Clicked="Show_Lists_Clicked"/>
+            <Label Text="Addresses"/>
+            <StackLayout BackgroundColor="Beige">
+
+                <ListView x:Name="Address_List_View" ItemTapped="Address_List_View_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Black" Text="{Binding Address_ID}"/>
+                                    <Label TextColor="Black" Text="{Binding City}"/>
+                                    <Label TextColor="Black" Text="{Binding District}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Label Text="Cards"/>
+            <StackLayout BackgroundColor="Beige">
+
+                <ListView x:Name="Cards_List_View" ItemTapped="Cards_List_View_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Black" Text="{Binding Card_ID}"/>
+                                    <Label TextColor="Black" Text="{Binding Card_Name}"/>
+                                    <Label TextColor="Black" Text="{Binding Card_Number}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            
+            <Button Text="Pay" x:Name="useItems" Clicked="useItems_Clicked"/>
+            <Label x:Name="total" Text="Total: "/>
+            <StackLayout BackgroundColor="Beige">
+                <ListView x:Name="Proceed_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="Black" Text="{Binding Bill_ID}"/>
+                                    <Label TextColor="Black" Text="{Binding Address_ID}"/>
+                                    <Label TextColor="Black" Text="{Binding Card_ID}"/>
+                                    <Label TextColor="Black" Text="{Binding Processor}"/>
+                                    <Label TextColor="Black" Text="{Binding RTX}"/>
+                                    <Label TextColor="Black" Text="{Binding Memory_Size}"/>
+                                    <Label TextColor="Black" Text="{Binding Ram_Size}"/>
+                                    <Label TextColor="Black" Text="{Binding Total}"/>
+                                    <Button Text="X" BindingContext="{Binding Bill_ID}" Clicked="Button_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="10,0" BackgroundColor="#DC3545" CornerRadius="100" WidthRequest="40" HeightRequest="40" FontAttributes="Bold"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalPractice.RadioPage"
+             Title="RadioPage">
+    <ScrollView>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout RadioButtonGroup.GroupName="Proccessor" Grid.Column="0" Grid.Row="0">
+                    <RadioButton Content="i3" Value="30" CheckedChanged="i3_CheckedChanged" x:Name="i3"/>
+                    <RadioButton Content="i5" Value="50" x:Name="i5" CheckedChanged="i5_CheckedChanged"/>
+                    <RadioButton Content="i7" Value="70" x:Name="i7" CheckedChanged="i7_CheckedChanged"/>
+                </StackLayout>
+                <StackLayout RadioButtonGroup.GroupName="RTX" Grid.Column="1" Grid.Row="0">
+                    <RadioButton Content="3060" Value="30" x:Name="rtx36" CheckedChanged="rtx36_CheckedChanged"/>
+                    <RadioButton Content="3060ti" Value="50" x:Name="rtx36ti" CheckedChanged="rtx36ti_CheckedChanged"/>
+                    <RadioButton Content="3070" Value="70" x:Name="rtx37" CheckedChanged="rtx37_CheckedChanged"/>
+
+                </StackLayout>
+            </Grid>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="mouse" CheckedChanged="mouse_CheckedChanged" />
+                    <Label Text="Mouse"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="keyboard" CheckedChanged="keyboard_CheckedChanged" />
+                    <Label Text="keyboard"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="headphones" CheckedChanged="headphones_CheckedChanged" />
+                    <Label Text="headphones"/>
+                </StackLayout>
+
+
+            </StackLayout>
+            <Label Text="Total: " x:Name="totalprice"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
